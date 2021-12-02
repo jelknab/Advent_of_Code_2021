@@ -2,7 +2,7 @@ using System.Linq;
 using Advent_of_Code_2021.Day_2;
 using Xunit;
 
-namespace TestProject1
+namespace Tests
 {
     public class Day2Tests
     {

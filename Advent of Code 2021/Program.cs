@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Advent_of_Code_2021.Day_1;
 
 namespace Advent_of_Code_2021
@@ -35,6 +36,11 @@ namespace Advent_of_Code_2021
             {
                 Console.WriteLine("Day 2 not solved yet");
             }
+            
+            Console.WriteLine();
+            Console.WriteLine(Encoding.UTF8.GetString(Convert.FromBase64String(_xmassTree)));
         }
+
+        private static string _xmassTree = "ICAgKiAgICAqICAoKSAgICogICAqCiogICAgICAgICogL1wgICAgICAgICAqCiAgICAgICogICAvaVxcICAgICogICoKICAgICogICAgIG8vXFwgICogICAgICAqCiAqICAgICAgIC8vL1xpXCAgICAqCiAgICAgKiAgIC8qL29cXCAgKiAgICAqCiAgICogICAgL2kvL1wqXCAgICAgICoKICAgICAgICAvby8qXFxpXCAgICoKICAqICAgIC8vaS8vb1xcXFwgICAgICoKICAgICogLyovLy8vXFxcXGlcKgogKiAgICAvL28vL2lcXCpcXFwgICAqCiAgICogL2kvLy8qL1xcXFxcb1wgICAqCiAgKiAgICAqICAgfHwgICAgICogICAg";
     }
 }
