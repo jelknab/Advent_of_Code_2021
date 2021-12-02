@@ -40,18 +40,11 @@ namespace Advent_of_Code_2021.Day_1
 
         public static IEnumerable<int> MakeMeasurementWindows(IEnumerable<int> measurements)
         {
-            var sonarLines = measurements.ToArray();
+            var values = measurements.ToArray();
 
-            for (var sonarIndex = 0; sonarIndex < sonarLines.Length; sonarIndex++)
+            for (var sonarIndex = 2; sonarIndex < values.Length; sonarIndex++)
             {
-                var sum = 0;
-                
-                for (var windowIndex = 0; windowIndex < 3 && sonarIndex + windowIndex < sonarLines.Length; windowIndex++)
-                {
-                    sum += sonarLines[sonarIndex + windowIndex];
-                }
-
-                yield return sum;
+                yield return values[sonarIndex] + values[sonarIndex - 1] + values[sonarIndex - 2];
             }
         }
 
