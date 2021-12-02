@@ -10,6 +10,9 @@
     <ItemGroup>
       <None Remove="Day 1\input" />
       <EmbeddedResource Include="Day 1\input" />
+      <None Update="Day 2\input">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
