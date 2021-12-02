@@ -7,7 +7,7 @@ namespace Advent_of_Code_2021.Day_1
 {
     public class Day1: IDay
     {
-        private IEnumerable<int> ReadSonarInput()
+        private static IEnumerable<int> ReadSonarInput()
         {
             return File.ReadLines("Day 1/input").Select(int.Parse);
         }
