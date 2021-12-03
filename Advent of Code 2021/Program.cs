@@ -1,5 +1,5 @@
 ﻿using System;
-using Advent_of_Code_2021.Day_1;
+using System.Text;
 
 namespace Advent_of_Code_2021
 {
@@ -7,7 +7,8 @@ namespace Advent_of_Code_2021
     {
         static void Main(string[] args)
         {
-            var dayPath = $"Advent_of_Code_2021.Day_{DateTime.Today.Day}.Day{DateTime.Today.Day}";
+            var day = DateTime.Today.Day;
+            var dayPath = $"Advent_of_Code_2021.Day_{day}.Day{day}";
             var dayType = Type.GetType(dayPath) ??
                           throw new Exception($"No class found at: {dayPath}");
             var dayInstance = (IDay) Activator.CreateInstance(dayType) ??
@@ -35,6 +36,11 @@ namespace Advent_of_Code_2021
             {
                 Console.WriteLine("Day 2 not solved yet");
             }
+            
+            Console.WriteLine();
+            Console.WriteLine(Encoding.UTF8.GetString(Convert.FromBase64String(XMassTree)));
         }
+
+        private const string XMassTree = "ICAgKiAgICAqICAoKSAgICogICAqCiogICAgICAgICogL1wgICAgICAgICAqCiAgICAgICogICAvaVxcICAgICogICoKICAgICogICAgIG8vXFwgICogICAgICAqCiAqICAgICAgIC8vL1xpXCAgICAqCiAgICAgKiAgIC8qL29cXCAgKiAgICAqCiAgICogICAgL2kvL1wqXCAgICAgICoKICAgICAgICAvby8qXFxpXCAgICoKICAqICAgIC8vaS8vb1xcXFwgICAgICoKICAgICogLyovLy8vXFxcXGlcKgogKiAgICAvL28vL2lcXCpcXFwgICAqCiAgICogL2kvLy8qL1xcXFxcb1wgICAqCiAgKiAgICAqICAgfHwgICAgICogICAg";
     }
 }

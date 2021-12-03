@@ -1,8 +1,7 @@
-using System;
 using Advent_of_Code_2021.Day_1;
 using Xunit;
 
-namespace TestProject1
+namespace Tests
 {
     public class Day1Tests
     {

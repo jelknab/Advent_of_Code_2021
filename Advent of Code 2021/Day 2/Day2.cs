@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +7,7 @@ namespace Advent_of_Code_2021.Day_2
 {
     public class Day2: IDay
     {
-        public IEnumerable<string> ReadCommandInput()
+        private static IEnumerable<string> ReadCommandInput()
         {
             return File.ReadLines("Day 2/input");
         }

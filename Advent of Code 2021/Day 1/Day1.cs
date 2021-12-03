@@ -7,16 +7,9 @@ namespace Advent_of_Code_2021.Day_1
 {
     public class Day1: IDay
     {
-        private IEnumerable<int> ReadSonarInput()
+        private static IEnumerable<int> ReadSonarInput()
         {
-            var resourceStream = GetType().Assembly.GetManifestResourceStream("Advent_of_Code_2021.Day_1.input");
-
-            using var reader = new StreamReader(resourceStream!);
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                yield return int.Parse(line);
-            }
+            return File.ReadLines("Day 1/input").Select(int.Parse);
         }
 
         public static int SumMeasurementIncrements(IEnumerable<int> measurements)
