@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualBasic;
 
 namespace Advent_of_Code_2021.Day_5
 {
