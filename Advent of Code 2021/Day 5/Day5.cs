@@ -44,14 +44,13 @@ namespace Advent_of_Code_2021.Day_5
         public static int[,] MapLines(IEnumerable<Line> lines)
         {
             lines = lines.ToList();
-            var maxX = lines.SelectMany(line => new[] {line.X1, line.X2}).Max() +1;
-            var maxY = lines.SelectMany(line => new[] {line.Y1, line.Y2}).Max() +1;
+            var maxX = lines.Select(line => Math.Max(line.X1, line.X2)).Max() + 1;
+            var maxY = lines.Select(line => Math.Max(line.Y1, line.Y2)).Max() + 1;
             var grid = new int[maxY, maxX];
 
             foreach (var line in lines)
             {
-                var x = line.X1;
-                var y = line.Y1;
+                var (x, y) = (line.X1, line.Y1);
 
                 while (x != line.X2 || y != line.Y2)
                 {
