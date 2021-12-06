@@ -12,28 +12,25 @@ namespace Advent_of_Code_2021.Day_6
             return File.ReadAllText("Day 6/input").Split(',').Select(int.Parse);
         }
 
-        public static long SimulateDays(IEnumerable<int> fishes, int days)
+        public static long SimulateDays(IEnumerable<int> fishAges, int days)
         {
-            var fishPerDay = new long[9];
-            foreach (var fish in fishes)
-            {
-                fishPerDay[fish]++;
-            }
+            var fishPerAge = new long[9];
+            foreach (var age in fishAges) fishPerAge[age]++;
 
             for (var day = 0; day < days; day++)
             {
-                var birthingCount = fishPerDay[0];
+                var birthingCount = fishPerAge[0];
                 
                 for (var i = 0; i < 8; i++)
                 {
-                    fishPerDay[i] = fishPerDay[i + 1];
+                    fishPerAge[i] = fishPerAge[i + 1]; // shift ages left
                 }
 
-                fishPerDay[6] += birthingCount;
-                fishPerDay[8] = birthingCount;
+                fishPerAge[6] += birthingCount;
+                fishPerAge[8] = birthingCount;
             }
 
-            return fishPerDay.Sum();
+            return fishPerAge.Sum();
         }
         
         public void PrintSolution1()
