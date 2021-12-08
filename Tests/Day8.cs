@@ -8,24 +8,23 @@ namespace Tests
     public class Day8Tests
     {
         [Fact]
-        public void TestAgainstExample()
+        public void TestPart1AgainstExample()
         {
-            var input = File.ReadLines("test inputs/day8");
+            var inputParsed = Day8.ParseInput(File.ReadLines("test inputs/day8")).ToArray();
+            Assert.Equal(26, Day8.CountLengthDetectableSegmentNumbers(inputParsed));
+        }
 
-            var inputParsed = Day8.ParseInput(input).ToArray();
-            
-            Assert.Equal(26, Day8.CountEasySegmentNumbers(inputParsed));
-
-            var part2Input = Day8.ParseInput(new[] {"acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf"}).First();
-            var matchedPatterns = Day8.MatchNumbersToPatters(part2Input.patterns);
+        [Fact]
+        public void TestPart2AgainstExample()
+        {
+            var (patterns, output) = Day8.ParseInput(new[] {"acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf"}).First();
+            var matchedPatterns = Day8.MatchPattersToSegments(patterns);
             
             Assert.Equal(new [] {8, 5, 2, 3, 7, 9, 6, 4, 0, 1}, matchedPatterns.Select(m => m.value));
+            Assert.Equal(5353, Day8.GetOutputValue(patterns, output));
             
-            Assert.Equal(5353, Day8.GetValueOfPatternsAndOutput(part2Input.patterns, part2Input.output));
-
-            var testAgainstFullTestInput =
-                inputParsed.Select(i => Day8.GetValueOfPatternsAndOutput(i.patterns, i.output));
-            Assert.Equal(61229, testAgainstFullTestInput.Sum());
+            var fullTestInputParsed = Day8.ParseInput(File.ReadLines("test inputs/day8")).ToArray();
+            Assert.Equal(61229, fullTestInputParsed.Select(i => Day8.GetOutputValue(i.patterns, i.output)).Sum());
         }
     }
 }
