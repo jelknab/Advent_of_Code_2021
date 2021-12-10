@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_3
+namespace Advent_of_Code_2021.Day_03
 {
     public class Day3: IDay
     {
         private static string[] ReadBytes()
         {
-            return File.ReadLines("Day 3/input").ToArray();
+            return File.ReadLines("Day 03/input").ToArray();
         }
 
         private static char FindMostCommonBit(IReadOnlyCollection<string> input, int position)

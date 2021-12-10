@@ -1,11 +1,11 @@
 using System.IO;
 using System.Linq;
-using Advent_of_Code_2021.Day_8;
+using Advent_of_Code_2021.Day_08;
 using Xunit;
 
 namespace Tests
 {
-    public class Day8Tests
+    public class Day08Tests
     {
         [Fact]
         public void TestPart1AgainstExample()

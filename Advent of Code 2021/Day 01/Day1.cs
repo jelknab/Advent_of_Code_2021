@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_1
+namespace Advent_of_Code_2021.Day_01
 {
     public class Day1: IDay
     {
         private static IEnumerable<int> ReadSonarInput()
         {
-            return File.ReadLines("Day 1/input").Select(int.Parse);
+            return File.ReadLines("Day 01/input").Select(int.Parse);
         }
 
         public static int SumMeasurementIncrements(IEnumerable<int> measurements)

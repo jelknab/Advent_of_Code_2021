@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_5
+namespace Advent_of_Code_2021.Day_05
 {
     public struct Line
     {
@@ -17,7 +17,7 @@ namespace Advent_of_Code_2021.Day_5
     {
         private static IEnumerable<string> ReadInput()
         {
-            return File.ReadLines("Day 5/input").ToArray();
+            return File.ReadLines("Day 05/input").ToArray();
         }
         
         public static IEnumerable<Line> ParseLines(IEnumerable<string> input)

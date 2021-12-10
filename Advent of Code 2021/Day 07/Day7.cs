@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_7
+namespace Advent_of_Code_2021.Day_07
 {
     public class Day7: IDay
     {
         private IEnumerable<int> ReadPositions()
         {
-            return File.ReadAllText("Day 7/input").Split(',').Select(int.Parse);
+            return File.ReadAllText("Day 07/input").Split(',').Select(int.Parse);
         }
         
         private static int CalculateTriangularNumber(int n) {

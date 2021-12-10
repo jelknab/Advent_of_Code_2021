@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_2
+namespace Advent_of_Code_2021.Day_02
 {
     public class Day2: IDay
     {
         private static IEnumerable<string> ReadCommandInput()
         {
-            return File.ReadLines("Day 2/input");
+            return File.ReadLines("Day 02/input");
         }
         
         public static IEnumerable<(string command, int value)> ReadCommands(IEnumerable<string> input)

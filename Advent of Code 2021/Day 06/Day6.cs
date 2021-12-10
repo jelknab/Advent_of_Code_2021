@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_6
+namespace Advent_of_Code_2021.Day_06
 {
     public class Day6: IDay
     {
         private IEnumerable<int> ReadInput()
         {
-            return File.ReadAllText("Day 6/input").Split(',').Select(int.Parse);
+            return File.ReadAllText("Day 06/input").Split(',').Select(int.Parse);
         }
 
         public static long SimulateDays(IEnumerable<int> fishAges, int days)

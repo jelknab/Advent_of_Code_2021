@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_9
+namespace Advent_of_Code_2021.Day_09
 {
     public class Day9: IDay
     {
@@ -16,7 +16,7 @@ namespace Advent_of_Code_2021.Day_9
         
         private static IEnumerable<string> ReadInput()
         {
-            return File.ReadAllLines("Day 9/input");
+            return File.ReadAllLines("Day 09/input");
         }
         
         public static int[,] ParseGrid(IEnumerable<string> rows)

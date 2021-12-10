@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Advent_of_Code_2021.Day_8
+namespace Advent_of_Code_2021.Day_08
 {
     public class Day8 : IDay
     {
@@ -22,7 +22,7 @@ namespace Advent_of_Code_2021.Day_8
 
         private static IEnumerable<string> ReadInput()
         {
-            return File.ReadAllLines("Day 8/input");
+            return File.ReadAllLines("Day 08/input");
         }
 
         public static IEnumerable<(string[] patterns, string[] output)> ParseInput(IEnumerable<string> lines)

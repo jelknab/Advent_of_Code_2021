@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Advent_of_Code_2021.Day_4
+namespace Advent_of_Code_2021.Day_04
 {
     public class Day4: IDay
     {
         private static string[] ReadInput()
         {
-            return File.ReadLines("Day 4/input").ToArray();
+            return File.ReadLines("Day 04/input").ToArray();
         }
         
         public static (int[] drawnNumbers, int[] boardNumbers) ParseInput(string[] input)

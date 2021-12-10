@@ -8,31 +8,34 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="Day 1\input">
+        <None Update="Day 01\input">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 2\input">
+        <None Update="Day 02\input">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 3\input">
+        <None Update="Day 03\input">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 4\input">
+        <None Update="Day 04\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 5\input">
+        <None Update="Day 05\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 6\input">
+        <None Update="Day 06\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 7\input">
+        <None Update="Day 07\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 8\input">
+        <None Update="Day 08\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="Day 9\input">
+        <None Update="Day 09\input">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Day 10\input">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
