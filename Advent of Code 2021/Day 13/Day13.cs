@@ -101,7 +101,7 @@ namespace Advent_of_Code_2021.Day_13
         }
 
 
-        private void PrintGrid(int[,] grid)
+        private static void PrintGrid(int[,] grid)
         {
             for (var y = 0; y < grid.GetLength(0); y++)
             {
@@ -112,9 +112,6 @@ namespace Advent_of_Code_2021.Day_13
 
                 Console.WriteLine();
             }
-
-            Console.WriteLine();
-            Console.WriteLine();
         }
 
         public void PrintSolution1()
