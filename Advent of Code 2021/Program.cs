@@ -7,7 +7,8 @@ namespace Advent_of_Code_2021
     {
         static void Main(string[] args)
         {
-            var day = DateTime.Today.Day;
+            var day = 13;
+            // var day = DateTime.Today.Day;
             var dayLeadingZeros = day.ToString("D2"); 
             var dayPath = $"Advent_of_Code_2021.Day_{dayLeadingZeros}.Day{day}";
             var dayType = Type.GetType(dayPath) ??

@@ -9,7 +9,7 @@ namespace Tests
         [Fact]
         public void TestAgainstExample()
         {
-            var testInput = new string[]
+            var testInput = new []
             {
                 "5483143223",
                 "2745854711",
