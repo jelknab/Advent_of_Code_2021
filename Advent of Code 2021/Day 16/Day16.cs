@@ -24,7 +24,7 @@ namespace Advent_of_Code_2021.Day_16
 
     public class LiteralPacket: Packet
     {
-        public long Value { get; set; }
+        public long Value { get; private set; }
 
         public override void ParsePacket(string bitString)
         {
@@ -61,20 +61,24 @@ namespace Advent_of_Code_2021.Day_16
 
         public override void ParsePacket(string bitString)
         {
-            var lengthTypeID = Day16.ReadValue(bitString, Position + 6, 1);
+            var lengthTypeId = Day16.ReadValue(bitString, Position + 6, 1);
 
-            if (lengthTypeID == 0)
+            switch (lengthTypeId)
             {
-                var subPacketBits = Day16.ReadValue(bitString, Position + 7, 15);
-                PacketSize = 22 + subPacketBits;
-                ParseSubPackets(bitString.Substring(Position + 22, subPacketBits));
-            }
-
-            if (lengthTypeID == 1)
-            {
-                var subPacketCount = Day16.ReadValue(bitString, Position + 7, 11);
-                ParseSubPackets(bitString, Position + 18, subPacketCount);
-                PacketSize = 18 + SubPackets.Sum(packet => packet.PacketSize);
+                case 0:
+                {
+                    var subPacketBits = Day16.ReadValue(bitString, Position + 7, 15);
+                    PacketSize = 22 + subPacketBits;
+                    ParseSubPackets(bitString.Substring(Position + 22, subPacketBits));
+                    break;
+                }
+                case 1:
+                {
+                    var subPacketCount = Day16.ReadValue(bitString, Position + 7, 11);
+                    ParseSubPackets(bitString, Position + 18, subPacketCount);
+                    PacketSize = 18 + SubPackets.Sum(packet => packet.PacketSize);
+                    break;
+                }
             }
         }
 
@@ -125,7 +129,7 @@ namespace Advent_of_Code_2021.Day_16
 
     public class Day16 : IDay
     {
-        public const int LiteralPacketId = 4;
+        private const int LiteralPacketId = 4;
 
         public static string ParseInputToBitString(string hexInput)
         {
@@ -138,9 +142,10 @@ namespace Advent_of_Code_2021.Day_16
 
         public static Packet ParsePacket(string bitString, int position)
         {
-            if (ReadValue(bitString, position + 3, 3) == LiteralPacketId)
+            var packetId = ReadValue(bitString, position + 3, 3);
+            if (packetId == LiteralPacketId)
             {
-                var literalPackage = new LiteralPacket()
+                var literalPackage = new LiteralPacket
                 {
                     Position = position,
                     Version = ReadValue(bitString, position, 3),
