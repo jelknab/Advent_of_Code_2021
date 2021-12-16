@@ -7,8 +7,13 @@ namespace Advent_of_Code_2021
     {
         static void Main(string[] args)
         {
-            // var day = 14;
-            var day = DateTime.Today.Day;
+            PrintDaySolutions(DateTime.Today.Day);
+            Console.WriteLine();
+            PrintTree();
+        }
+
+        private static void PrintDaySolutions(int day)
+        {
             var dayLeadingZeros = day.ToString("D2"); 
             var dayPath = $"Advent_of_Code_2021.Day_{dayLeadingZeros}.Day{day}";
             var dayType = Type.GetType(dayPath) ??
@@ -38,8 +43,10 @@ namespace Advent_of_Code_2021
             {
                 Console.WriteLine("Day 2 not solved yet");
             }
-            
-            Console.WriteLine();
+        }
+
+        private static void PrintTree()
+        {
             Console.WriteLine(Encoding.UTF8.GetString(Convert.FromBase64String(XMassTree)));
         }
 
