@@ -29,37 +29,13 @@ namespace Advent_of_Code_2021.Day_17
             };
         }
 
-        public static int FindMinXStartVelocity(TargetArea targetArea)
+        private static int FindMinXStartVelocity(TargetArea targetArea)
         {
             var x = 0;
             for (var velocity = 0;; velocity++)
             {
                 x += velocity;
                 if (x >= targetArea.X1) return velocity;
-            }
-        }
-        
-        public static int FindMaxXStartVelocity(TargetArea targetArea)
-        {
-            var x = 0;
-            var velocity = 0;
-            for (;; velocity++)
-            {
-                x += velocity;
-                if (x > targetArea.X2) return velocity - 1;
-            }
-        }
-        
-        public static int FindMinYStartVelocity(TargetArea targetArea)
-        {
-            var velocityAtZero = 0;
-
-            for (;; velocityAtZero++)
-            {
-                if (velocityAtZero >= Math.Abs(targetArea.Y2))
-                {
-                    return velocityAtZero;
-                }
             }
         }
 
@@ -76,33 +52,22 @@ namespace Advent_of_Code_2021.Day_17
             }
         }
 
-        private static bool hits(int velX, int velY, TargetArea targetArea)
+        private static bool HitsTargetArea(int velX, int velY, TargetArea targetArea)
         {
             var x = 0;
             var y = 0;
-            for (var step = 0;; step++)
+            while (x < targetArea.X2 && y > targetArea.Y1)
             {
                 x += Math.Max(velX--, 0);
                 y += velY--;
 
-                if (x >= targetArea.X1 && x <= targetArea.X2)
+                if (x >= targetArea.X1 && x <= targetArea.X2 && y >= targetArea.Y1 && y <= targetArea.Y2)
                 {
-                    if (y >= targetArea.Y1 && y <= targetArea.Y2)
-                    {
-                        return true;
-                    }
-                }
-
-                if (x > targetArea.X2)
-                {
-                    return false;
-                }
-
-                if (y < targetArea.Y1)
-                {
-                    return false;
+                    return true;
                 }
             }
+
+            return false;
         }
 
         public static int CountAllLaunchOptions(TargetArea targetArea)
@@ -113,7 +78,7 @@ namespace Advent_of_Code_2021.Day_17
             {
                 for (var y = targetArea.Y1; y <= FindMaxYStartVelocity(targetArea); y++)
                 {
-                    if (hits(x, y, targetArea))
+                    if (HitsTargetArea(x, y, targetArea))
                     {
                         hitCount++;
                     }
